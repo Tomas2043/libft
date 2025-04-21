@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toandrad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 13:20:38 by toandrad          #+#    #+#             */
-/*   Updated: 2025/04/17 10:07:41 by toandrad         ###   ########.fr       */
+/*   Created: 2025/04/17 11:18:19 by toandrad          #+#    #+#             */
+/*   Updated: 2025/04/17 12:05:52 by toandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*ptr;
+	char	*str;
+	size_t	i;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	if (size != 0 && count > SIZE_MAX / size)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!str)
 		return (NULL);
-	if (count == 0 || size == 0)
-		return (malloc(1));
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, size * count);
-	return (ptr);
+	i = 0;
+	while (i < s1_len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (i < s2_len)
+	{
+		str[s1_len + i] = s2[i];
+		i++;
+	}
+	str[s1_len + s2_len] = '\0';
+	return (str);
 }
