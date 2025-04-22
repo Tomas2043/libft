@@ -6,7 +6,7 @@
 #    By: toandrad <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/10 14:06:56 by toandrad          #+#    #+#              #
-#    Updated: 2025/04/21 15:33:30 by toandrad         ###   ########.fr        #
+#    Updated: 2025/04/22 10:41:41 by toandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I.
 
 AR = ar rcs
-RM = rm -f
 
 SRCS = \
 			ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_itoa.c \
@@ -37,10 +36,10 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
-fclean:
-	$(RM) $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
 
