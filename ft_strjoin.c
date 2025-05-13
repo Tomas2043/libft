@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toandrad <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: toandrad <toandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:18:19 by toandrad          #+#    #+#             */
-/*   Updated: 2025/04/17 12:05:52 by toandrad         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:05:59 by toandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[s1_len + s2_len] = '\0';
 	return (str);
 }
+
+/*int	main(void)
+{
+	char *str1 = "Hello, ";
+	char *str2 = "World!";
+	char *result = ft_strjoin(str1, str2);
+	
+	printf("String 1: %s\n", str1);
+	printf("String 2: %s\n", str2);
+	printf("Joined string: %s\n", result);
+	
+	free(result);
+	return (0);
+}*/

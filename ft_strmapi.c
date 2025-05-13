@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toandrad <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: toandrad <toandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:25:43 by toandrad          #+#    #+#             */
-/*   Updated: 2025/04/21 14:50:43 by toandrad         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:48:54 by toandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
+/*static char	to_upper(unsigned int idx, char c)
+{
+	(void)idx;
+	return (ft_toupper(c));
+}
+
+int	main(void)
+{
+	char	*s = "Hello, world!";
+	char	*mapped;
+
+	mapped = ft_strmapi(s, to_upper);
+	if (!mapped)
+		return (1);
+	ft_putendl_fd(mapped, 1);
+	free(mapped);
+	return (0);
+}*/
