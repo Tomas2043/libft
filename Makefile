@@ -6,7 +6,7 @@
 #    By: toandrad <toandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/10 14:06:56 by toandrad          #+#    #+#              #
-#    Updated: 2025/10/22 11:12:26 by toandrad         ###   ########.fr        #
+#    Updated: 2025/10/22 11:15:52 by toandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,12 +46,16 @@ SRCS = \
 			ft_put/ft_putchar_fd.c ft_put/ft_putstr_fd.c ft_put/ft_putendl_fd.c ft_put/ft_putnbr_fd.c \
 			ft_printf/ft_printf.c ft_printf/utils/ft_putchar.c ft_printf/utils/ft_puthex.c \
 			ft_printf/utils/ft_putnbr.c ft_printf/utils/ft_putptr.c ft_printf/utils/ft_putstr.c \
-			ft_printf/utils/ft_putunsigned.c get_next_line/get_next_line_utils.c get_next_line/get_next_line.c
+			ft_printf/utils/ft_putunsigned.c
 
 OBJSDIR = objects
 OBJS = $(addprefix $(OBJSDIR)/, $(notdir $(SRCS:.c=.o)))
 
 all: banner $(NAME)
+
+banner:
+	@echo "$(ROCKET_EMOJI) $(BLUE)Starting libft compilation...$(RESET)"
+	@echo "$(LIBRARY_EMOJI) $(PURPLE)Building library with ft_printf integration$(RESET)"
 
 $(NAME): $(OBJS)
 	@echo "$(LIBRARY_EMOJI) $(CYAN)Creating library $(NAME)...$(RESET)"
@@ -88,10 +92,6 @@ $(OBJSDIR)/%.o: ft_printf/%.c ft_printf/ft_printf.h libft.h | $(OBJSDIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJSDIR)/%.o: ft_printf/utils/%.c ft_printf/ft_printf.h libft.h | $(OBJSDIR)
-	@echo "$(COMPILE_EMOJI) $(YELLOW)Compiling $<...$(RESET)"
-	@$(CC) $(CFLAGS) -c $< -o $@
-	
-$(OBJSDIR)/%.o: get_next_line/%.c get_next_line/get_next_line.h libft.h | $(OBJSDIR)
 	@echo "$(COMPILE_EMOJI) $(YELLOW)Compiling $<...$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
