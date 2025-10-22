@@ -6,7 +6,7 @@
 /*   By: toandrad <toandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 10:21:34 by toandrad          #+#    #+#             */
-/*   Updated: 2025/08/04 02:57:44 by toandrad         ###   ########.fr       */
+/*   Updated: 2025/10/22 11:07:27 by toandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
-// ft_printf functions
 int				ft_printf(const char *input, ...);
+char			*get_next_line(int fd);
 
 #endif
